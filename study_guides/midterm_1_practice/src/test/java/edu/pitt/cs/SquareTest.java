@@ -20,7 +20,11 @@ public class SquareTest {
 	@Test
 	public void testSetSquaredIntegration() {
 		// TODO: Fill in!
-		fail();
+		Number number = Mockito.mock(Number.class);
+		Square square = new Square();
+		square.setSquared(number, 3);
+		Mockito.when()
+		assertEquals(9, number.getVal());
 	}
 
 	/**
@@ -36,6 +40,9 @@ public class SquareTest {
 	@Test
 	public void testSetSquaredUnit() {
 		// TODO: Fill in!
-		fail();
+		Number number = Mockito.mock(Number.class);
+		Square square = new Square();
+		square.setSquared(number, 3);
+		assertEquals(9, number.getVal());
 	}
 }
