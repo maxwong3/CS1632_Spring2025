@@ -13,18 +13,13 @@ public class ValueStepDefinitions {
 		value = new Value();
 	}
 
-	@When("increment value")
-	public void incrementValue() {
+	@When("I call incVal")
+	public void incVal() {
 		value.incVal();
 	}
 
-	@When ("I get value")
-	public void getValue() {
-		value.getVal();
-	}
-
 	@Then("the value is: {int}")
-	public void getValue(int value) {
-		assertEquals(this.value.getVal(), value);
+	public void getValue(int val) {
+		assertEquals(value.getVal(), val);
 	}
 }	
