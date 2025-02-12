@@ -21,7 +21,10 @@ public class DeathStarTest {
 	@Test
 	public void testShootPlanetIntegration() {
 		// TODO: Fill in!
-		fail();
+		DeathStar deathStar = new DeathStar();
+		Planet planet = new Planet(10);
+		assertEquals("Wimpy planet was hit by the superlaser!", deathStar.shoot(planet));
+		assertEquals(-90, planet.getHitPoints());
 	}
 
 	/**
@@ -38,6 +41,10 @@ public class DeathStarTest {
 	@Test
 	public void testShootPlanetUnit() {
 		// TODO: Fill in!
-		fail();
+		DeathStar deathStar = new DeathStar();
+		Planet planet = Mockito.mock(Planet.class);
+		Mockito.when(planet.toString()).thenReturn("Wimpy planet");
+		assertEquals("Wimpy planet was hit by the superlaser!", deathStar.shoot(planet));
+		Mockito.verify(planet).damage(100);
 	}
 }
